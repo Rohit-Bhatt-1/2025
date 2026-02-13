@@ -133,22 +133,21 @@ cute-btn1 {
     animation: none;
 }
 
-.spiral-in {
+.spiral-button {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(720deg) scale(3);
-    animation: spiralIn 1.5s forwards ease-out;
+    transform: translate(-50%, -50%) rotate(720deg) scale(0);
+    animation: spiralIn 1.5s forwards ease-in-out;
+    z-index: 9999;
 }
 
 @keyframes spiralIn {
     0% {
-        transform: translate(-50%, -50%) rotate(720deg) scale(3);
-        opacity: 0;
+        transform: translate(-50%, -50%) rotate(720deg) scale(0);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(0deg) scale(1);
-        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1.5);
     }
 }
 
