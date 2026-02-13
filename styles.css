@@ -133,20 +133,22 @@ cute-btn1 {
     animation: none;
 }
 
-.spiral-grow {
+.spiral-in {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(360deg) scale(0);
-    animation: spiralGrow 1.5s forwards;
+    transform: translate(-50%, -50%) rotate(720deg) scale(3);
+    animation: spiralIn 1.5s forwards ease-out;
 }
 
-@keyframes spiralGrow {
+@keyframes spiralIn {
     0% {
-        transform: translate(-50%, -50%) rotate(720deg) scale(0);
+        transform: translate(-50%, -50%) rotate(720deg) scale(3);
+        opacity: 0;
     }
     100% {
-        transform: translate(-50%, -50%) rotate(0deg) scale(3);
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        opacity: 1;
     }
 }
 
