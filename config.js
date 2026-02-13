@@ -81,7 +81,7 @@ const CONFIG = {
         musicUrl: "https://res.cloudinary.com/doxmljdz6/video/upload/v1771010847/Jeena_Mera_Haye_Hun_Hai_Tera_-_Samjhawan___Arijit_Singh___Shreya_Ghoshal_owwj6f.m4a", // Music streaming URL
         startText: "🎵 Play Music",        // Button text to start music
         stopText: "🔇 Stop Music",         // Button text to stop music
-        volume: 0.5                        // Volume level (0.0 to 1.0)
+        volume: 0.3                        // Volume level (0.0 to 1.0)
     }
 };
 

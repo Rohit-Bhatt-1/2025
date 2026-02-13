@@ -383,7 +383,7 @@ h2 {
 }
 
 .music-btn {
-    background: var(--primary-color);
+    background: #ff8787;
     color: white;
     border: none;
     padding: 10px 20px;
