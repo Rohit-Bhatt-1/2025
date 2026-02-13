@@ -131,7 +131,7 @@ function moveButton(button) {
 
 function hideButtonsAndMakeSecretQuestionPopUp() {
     document.querySelectorAll('.cute-btn').forEach(btn => btn.classList.add('hidden'));
-    document.getElementsByClassName('secret-answer').classList.add('spinner');
+    document.getElementsByClassName('secret-answer')[0].classList.add('spiral-grow');
 }
 
 // Love meter functionality

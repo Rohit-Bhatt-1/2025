@@ -30,7 +30,7 @@ const CONFIG = {
         second: {
             text: "How many travels will you include me in?",                          // For the love meter
             startText: "This much!",                                   // Text before the percentage
-            nextBtn: "Next ❤️"                                         // Text for the next button
+            nextBtn: "Let's see how you answer this ❤️"                                         // Text for the next button
         },
         third: {
             text: "I have some plans, will you accompany me for Valentine on February 14th, 2026? 🌹", // The big question!
