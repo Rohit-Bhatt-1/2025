@@ -80,7 +80,8 @@ cute-btn1 {
     color: white;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
+    will-change: transform;
+    /*transition: transform 0.3s, background 0.3s;*/
 }
 
 .cute-btn:hover {
@@ -123,6 +124,19 @@ cute-btn1 {
     animation-delay: 5s;
 }
 
+.secret-answer1 {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin-top: 0;
+    opacity: 0.2;
+    transition: opacity 0.3s;
+    transform: scale(0.7);
+    z-index: 2;
+    animation: subtle-hint 2s infinite alternate;
+    animation-delay: 5s;
+}
+
 .secret-answer .cute-btn {
     font-size: 0.8rem;
     padding: 5px 10px;
@@ -133,25 +147,49 @@ cute-btn1 {
     animation: none;
 }
 
-.spiral-button {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(720deg) scale(0);
-    animation: spiralIn 1.5s forwards ease-in-out;
+/* Update this in your styles.css */
+.spiral-active {
+    /* Override the subtle-hint animation completely */
+    animation: spiralIn 3s ease-in-out forwards !important;
+    opacity: 1 !important;
+    pointer-events: auto;
     z-index: 9999;
+    /* Move to fixed so it spirals relative to the whole screen */
+    position: fixed !important;
 }
 
 @keyframes spiralIn {
     0% {
-        transform: translate(-50%, -50%) rotate(720deg) scale(0);
+        transform: translate(0, 0) rotate(0deg) scale(0.7);
+        bottom: 20px;
+        right: 20px;
+        left: auto;
+        top: auto;
+    }
+    20% {
+        /* Move away from the corner into a wide arc */
+        top: 50%;
+        left: 50%;
+        transform: translate(300px, -300px) rotate(144deg) scale(1);
     }
     100% {
-        transform: translate(-50%, -50%) rotate(0deg) scale(1.5);
+        /* Landing spot: Center of screen */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(1080deg) scale(2);
     }
 }
 
+/*!* When the 'hidden' class is removed, this animation kicks in *!*/
+/*#nextBtn:not(.hidden) {*/
+/*    display: inline-block;*/
+/*    animation: buttonPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;*/
+/*}*/
 
+/*@keyframes buttonPop {*/
+/*    0% { transform: scale(0); opacity: 0; }*/
+/*    100% { transform: scale(1.1); opacity: 1; }*/
+/*}*/
 
 .love-meter {
     position: relative;

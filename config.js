@@ -30,7 +30,7 @@ const CONFIG = {
         second: {
             text: "How many travels will you include me in?",                          // For the love meter
             startText: "This much!",                                   // Text before the percentage
-            nextBtn: "Let's see how you answer this ❤️"                                         // Text for the next button
+            nextBtn: "I have a question for you❤️"                                         // Text for the next button
         },
         third: {
             text: "I have some plans, will you accompany me for Valentine on February 14th, 2026? 🌹", // The big question!
@@ -50,7 +50,7 @@ const CONFIG = {
     // Messages that appear after they say "Yes!"
     celebration: {
         title: "Yay! I'm the luckiest person in the world! 🎉💝💖💝💓",
-        message: "Let's spend the day together, and be happy.",
+        message: "Let's spend the day with each other",
         emojis: "🎁💖🤗💝💋❤️💕"  // These will bounce around
     },
 

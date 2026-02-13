@@ -59,8 +59,8 @@ window.addEventListener('DOMContentLoaded', () => {
     validateConfig();
 
     // Set texts from config
-    document.getElementById('valentineTitle').textContent = `${config.valentineName}, my love...`;
-    
+    document.getElementById('valentineTitle').textContent = `Hey ${config.valentineName}`;
+
     // Set first question texts
     document.getElementById('question1Text').textContent = config.questions.first.text;
     document.getElementById('yesBtn1').textContent = config.questions.first.yesBtn;
@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Set second question texts
     document.getElementById('question2Text').textContent = config.questions.second.text;
     document.getElementById('startText').textContent = config.questions.second.startText;
-    document.getElementById('nextBtn').textContent = config.questions.second.nextBtn;
+    document.getElementById('secretAnswerBtn1').textContent = config.questions.second.nextBtn;
     
     // Set third question texts
     document.getElementById('question3Text').textContent = config.questions.third.text;
@@ -129,9 +129,19 @@ function moveButton(button) {
     button.style.top = y + 'px';
 }
 
-function hideButtonsAndMakeSecretQuestionPopUp() {
-    document.querySelectorAll('.cute-btn').forEach(btn => btn.classList.add('hidden'));
-    document.getElementsByClassName('secret-answer')[0].classList.add('spiral-button');
+function hideButtonsAndMakeSecretQuestionPopUp(id) {
+    // Hide all cute-btns EXCEPT the nextBtn and the special secret button
+    document.querySelectorAll('.hide').forEach(btn => {
+        if (btn.id !== 'nextBtn' && btn.id !== 'nextBtn2' && !btn.classList.contains('special')) {
+            btn.classList.add('hidden');
+        }
+    });
+
+    // Run the spiral animation on the secret container (Page 1 logic)
+    const secretAnswer = document.querySelector(id);
+    if (secretAnswer) {
+        secretAnswer.classList.add('spiral-active');
+    }
 }
 
 // Love meter functionality
@@ -172,6 +182,21 @@ loveMeter.addEventListener('input', () => {
         extraLove.classList.remove('super-love');
         loveMeter.style.width = '100%';
     }
+});
+
+loveMeter.addEventListener('change', () => {
+    // 1. Target the button
+    const nextBtn = document.getElementById('nextBtn');
+    const nextBtn2 = document.getElementById('secretAnswerBtn1');
+
+    console.log("yo")
+
+    // 2. Make it appear
+    if(nextBtn != null) nextBtn.classList.remove('hidden');
+    if(nextBtn2 != null) nextBtn2.classList.remove('hidden');
+
+    // 3. Run your cleanup function
+    hideButtonsAndMakeSecretQuestionPopUp('.secret-answer1');
 });
 
 // Initialize love meter
