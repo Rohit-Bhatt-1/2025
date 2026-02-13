@@ -71,7 +71,24 @@ body {
     transition: transform 0.3s, background 0.3s;
 }
 
+cute-btn1 {
+    background: var(--button-color);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
 .cute-btn:hover {
+    transform: scale(1.1);
+    background: var(--button-hover);
+}
+
+.cute-btn1:hover {
     transform: scale(1.1);
     background: var(--button-hover);
 }
@@ -84,6 +101,13 @@ body {
     opacity: 0.7;
     cursor: not-allowed;
     pointer-events: none;
+}
+
+.bigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .secret-answer {
@@ -108,6 +132,25 @@ body {
     opacity: 1;
     animation: none;
 }
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spinAndGrow 1s linear infinite;
+}
+
+@keyframes spinAndGrow {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1.5);
+    }
+}
+
+
 
 .love-meter {
     position: relative;

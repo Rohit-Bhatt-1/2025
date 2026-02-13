@@ -129,6 +129,11 @@ function moveButton(button) {
     button.style.top = y + 'px';
 }
 
+function hideButtonsAndMakeSecretQuestionPopUp() {
+    document.querySelectorAll('.cute-btn').forEach(btn => btn.classList.add('hidden'));
+    document.getElementsByClassName('secret-answer').classList.add('spinner');
+}
+
 // Love meter functionality
 const loveMeter = document.getElementById('loveMeter');
 const loveValue = document.getElementById('loveValue');
